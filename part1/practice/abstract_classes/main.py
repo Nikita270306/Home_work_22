@@ -38,12 +38,77 @@
 # экземпляр класса Person должен поочередно взаимодействовать с объектами Car, Boat, Electroscooter
 
 # код должен выполняться не выбрасывая исключений
+from abc import ABC, abstractmethod
 
-# TODO напишите Ваш код здесь
+class Transport(ABC):
+
+    @abstractmethod
+    def start_engine(self):
+        pass
+
+    @abstractmethod
+    def stop_engine(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+    @abstractmethod
+    def move(self):
+        pass
 
 
-# Отрезок кода для самопроверки.
-# Запустите его, после того как выполните задание
+class Boat(Transport):
+    def start_engine(self):
+        print('Двигатель катера запущен')
+
+    def stop_engine(self):
+        print('Двигатель катера остановлен')
+
+    def move(self):
+        print('Катер в движении')
+
+    def stop(self):
+        print('Катер остановлен')
+
+
+class Car(Transport):
+    def start_engine(self):
+        print('Двигатель машины запущен')
+
+    def stop_engine(self):
+        print('Двигатель машины остановлен')
+
+    def move(self):
+        print('Машина в движении')
+
+    def stop(self):
+        print('Машина остановлен')
+
+
+class Electroscooter(Transport):
+    def start_engine(self):
+        print('Двигатель скутера запущен')
+
+    def stop_engine(self):
+        print('Двигатель скутера остановлен')
+
+    def move(self):
+        print('Скутер в движении')
+
+    def stop(self):
+        print('Скутер остановлен')
+
+
+class Person:
+    def use_transport(self, transport: Transport):
+        transport.start_engine()
+        transport.move()
+        transport.stop()
+        transport.stop_engine()
+
+
 if __name__ == '__main__':
     boat = Boat()
     car = Car()
@@ -51,7 +116,7 @@ if __name__ == '__main__':
 
     person = Person()
     person.use_transport(boat)
-    print('=' * 10)
+    print('=' * 100)
     person.use_transport(car)
-    print('=' * 10)
+    print('=' * 100)
     person.use_transport(kamikadze)

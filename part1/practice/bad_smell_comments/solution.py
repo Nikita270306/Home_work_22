@@ -16,7 +16,7 @@ class Unit:
             elif direction == 'LEFT':
                 new_y = y_coord
                 new_x = x_coord - speed
-            elif direction == 'RIGTH':
+            elif direction == 'RIGHT':
                 new_y = y_coord
                 new_x = x_coord + speed
         if crawl:
@@ -30,7 +30,7 @@ class Unit:
             elif direction == 'LEFT':
                 new_y = y_coord
                 new_x = x_coord - speed
-            elif direction == 'RIGTH':
+            elif direction == 'RIGHT':
                 new_y = y_coord
                 new_x = x_coord + speed
 
